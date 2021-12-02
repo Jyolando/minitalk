@@ -1,39 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   minitalk.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jyolando <jyolando@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/02 01:51:05 by jyolando          #+#    #+#             */
-/*   Updated: 2021/12/02 01:52:13 by jyolando         ###   ########.fr       */
+/*   Created: 2021/12/03 00:20:53 by jyolando          #+#    #+#             */
+/*   Updated: 2021/12/03 00:37:46 by jyolando         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#ifndef MINITALK_H
+# define MINITALK_H
 
-static void ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
+# include <stdlib.h>
+# include <signal.h>
+# include <unistd.h>
+# include "../Libft/libft.h"
 
-void	ft_putnbr(int n)
-{
-	long	nbr;
-
-	nbr = (long)n;
-	if (nbr < 0)
-	{
-		ft_putchar('-');
-		nbr = -nbr;
-	}
-	if (nbr > 9)
-	{
-		ft_putnbr(nbr / 10);
-		ft_putchar((nbr % 10) + '0');
-	}
-	else
-	{
-		ft_putchar(nbr + '0');
-	}
-}
+#endif
